@@ -14,7 +14,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Weixin$qunliaoOrder.coverage" NAME="qunliaoOrder Coverage Results" MODIFIED="1548830895728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weixin" />
-    <SUITE FILE_PATH="coverage/Weixin$qunliaoOrder__1_.coverage" NAME="qunliaoOrder (1) Coverage Results" MODIFIED="1548831655082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weixin/order" />
+    <SUITE FILE_PATH="coverage/Weixin$qunliaoOrder__1_.coverage" NAME="qunliaoOrder (1) Coverage Results" MODIFIED="1548833910904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weixin/order" />
     <SUITE FILE_PATH="coverage/Weixin$main.coverage" NAME="main Coverage Results" MODIFIED="1547698238185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weixin" />
     <SUITE FILE_PATH="coverage/Weixin$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1547770600286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Weixin$weixin.coverage" NAME="weixin Coverage Results" MODIFIED="1547653232935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weixin" />
@@ -24,7 +24,7 @@
       <file leaf-file-name="weixin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weixin/weixin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="54">
               <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
                 <element signature="e#34#59#0" expanded="true" />
@@ -130,8 +130,8 @@
       <file leaf-file-name="test2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/test2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="486">
+              <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -142,14 +142,13 @@
       <file leaf-file-name="qunliaoOrder.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/weixin/order/qunliaoOrder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+            <state relative-caret-position="348">
+              <caret line="108" column="35" lean-forward="true" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#775#4944#0" expanded="false" />
-                <element signature="e#836#1087#0" expanded="false" />
-                <element signature="e#1117#2169#0" expanded="false" />
-                <element signature="e#1343#2123#0" expanded="false" />
+                <element signature="e#965#1216#0" expanded="false" />
+                <element signature="e#1246#2358#0" expanded="false" />
+                <element signature="e#2388#3354#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -218,6 +217,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,8 +246,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -390,17 +389,17 @@
     <frame x="-8" y="0" width="1940" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19042553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19255319" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2699115" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27765486" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -424,6 +423,129 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/weixin/weixin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#34#59#0" expanded="true" />
+            <element signature="e#567#1185#0" expanded="false" />
+            <element signature="e#619#1185#0" expanded="false" />
+            <element signature="e#636#1110#0" expanded="false" />
+            <element signature="e#672#853#0" expanded="false" />
+            <element signature="e#903#1090#0" expanded="false" />
+            <element signature="e#1139#1185#0" expanded="false" />
+            <element signature="e#1208#1637#0" expanded="false" />
+            <element signature="e#1265#1637#0" expanded="false" />
+            <element signature="e#1282#1562#0" expanded="false" />
+            <element signature="e#1318#1429#0" expanded="false" />
+            <element signature="e#1591#1637#0" expanded="false" />
+            <element signature="e#1668#1696#0" expanded="false" />
+            <element signature="e#1726#2386#0" expanded="false" />
+            <element signature="e#2114#2319#0" expanded="false" />
+            <element signature="e#2412#2551#0" expanded="false" />
+            <element signature="e#2655#3438#0" expanded="false" />
+            <element signature="e#3133#3189#0" expanded="false" />
+            <element signature="e#3236#3298#0" expanded="false" />
+            <element signature="e#3347#3418#0" expanded="false" />
+            <element signature="e#3531#4264#0" expanded="false" />
+            <element signature="e#4292#4620#0" expanded="false" />
+            <element signature="e#4648#5134#0" expanded="false" />
+            <element signature="e#5496#5644#0" expanded="false" />
+            <element signature="e#5592#5644#0" expanded="false" />
+            <element signature="e#5663#6140#0" expanded="false" />
+            <element signature="e#5813#5900#0" expanded="false" />
+            <element signature="e#6011#6120#0" expanded="false" />
+            <element signature="e#6177#6502#0" expanded="false" />
+            <element signature="e#6537#6746#0" expanded="false" />
+            <element signature="e#6792#6901#0" expanded="false" />
+            <element signature="e#6926#6994#0" expanded="false" />
+            <element signature="e#7018#7132#0" expanded="false" />
+            <element signature="e#7158#7242#0" expanded="false" />
+            <element signature="e#7270#7433#0" expanded="false" />
+            <element signature="e#7461#7603#0" expanded="false" />
+            <element signature="e#7631#7836#0" expanded="false" />
+            <element signature="e#7864#7944#0" expanded="false" />
+            <element signature="e#7979#8198#0" expanded="false" />
+            <element signature="e#8235#10443#0" expanded="false" />
+            <element signature="e#8898#9128#0" expanded="false" />
+            <element signature="e#10476#10700#0" expanded="false" />
+            <element signature="e#10739#11662#0" expanded="false" />
+            <element signature="e#11555#11646#0" expanded="false" />
+            <element signature="e#11758#14226#0" expanded="false" />
+            <element signature="e#11785#11886#0" expanded="false" />
+            <element signature="e#12152#12867#0" expanded="false" />
+            <element signature="e#12185#12258#0" expanded="false" />
+            <element signature="e#12369#12802#0" expanded="false" />
+            <element signature="e#12475#12728#0" expanded="false" />
+            <element signature="e#12550#12728#0" expanded="false" />
+            <element signature="e#12886#13721#0" expanded="false" />
+            <element signature="e#12985#13177#0" expanded="false" />
+            <element signature="e#13056#13177#0" expanded="false" />
+            <element signature="e#13365#13484#0" expanded="false" />
+            <element signature="e#13791#14112#0" expanded="false" />
+            <element signature="e#13884#14112#0" expanded="false" />
+            <element signature="e#13905#13960#0" expanded="false" />
+            <element signature="e#13997#14106#0" expanded="false" />
+            <element signature="e#14447#15008#0" expanded="false" />
+            <element signature="e#15052#16110#0" expanded="false" />
+            <element signature="e#15921#16033#0" expanded="false" />
+            <element signature="e#16643#17266#0" expanded="false" />
+            <element signature="e#17310#17964#0" expanded="false" />
+            <element signature="e#18012#19203#0" expanded="false" />
+            <element signature="e#18440#18817#0" expanded="false" />
+            <element signature="e#19252#19386#0" expanded="false" />
+            <element signature="e#19421#19801#0" expanded="false" />
+            <element signature="e#19839#20048#0" expanded="false" />
+            <element signature="e#20213#20396#0" expanded="false" />
+            <element signature="e#21270#21540#0" expanded="false" />
+            <element signature="e#21766#22014#0" expanded="false" />
+            <element signature="e#22058#22755#0" expanded="false" />
+            <element signature="e#22795#23067#0" expanded="false" />
+            <element signature="e#24829#26506#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin/version.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin/order/qunliaoOrder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="837">
+          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#965#1216#0" expanded="false" />
+            <element signature="e#1246#2358#0" expanded="false" />
+            <element signature="e#2388#3354#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/weixin/weixin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -807,7 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7437">
           <caret line="1949" column="0" lean-forward="true" selection-start-line="1949" selection-start-column="0" selection-end-line="1949" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,7 +936,7 @@
     <entry file="file://$USER_HOME$/Desktop/Weixin/WeiXinVIVOX24shoucang.py" />
     <entry file="file://$PROJECT_DIR$/weixin/weixin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="54">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="e#34#59#0" expanded="true" />
@@ -918,7 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -926,22 +1046,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="775" column="4" lean-forward="false" selection-start-line="775" selection-start-column="4" selection-end-line="775" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weixin/qunliaoOrder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin/qunliaoOrder.py" />
     <entry file="file://$PROJECT_DIR$/test/test2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="486">
+          <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -950,14 +1062,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/weixin/order/qunliaoOrder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+        <state relative-caret-position="348">
+          <caret line="108" column="35" lean-forward="true" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#775#4944#0" expanded="false" />
-            <element signature="e#836#1087#0" expanded="false" />
-            <element signature="e#1117#2169#0" expanded="false" />
-            <element signature="e#1343#2123#0" expanded="false" />
+            <element signature="e#965#1216#0" expanded="false" />
+            <element signature="e#1246#2358#0" expanded="false" />
+            <element signature="e#2388#3354#0" expanded="false" />
           </folding>
         </state>
       </provider>
