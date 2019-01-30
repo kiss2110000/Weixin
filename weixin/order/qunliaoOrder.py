@@ -1,30 +1,41 @@
-import re
+import os
 import openpyxl
 from wxpy import *
 
+groupName = os.path.splitext(os.path.basename(os.path.abspath(__file__)))[0]
+excelFile = groupName+'.xlsx'
+if os.path.exists(excelFile) is False:
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    for col in range(1,9):
+        ws.cell(column=col, row=1, value=['商品', '价格', '数量', '客户', '电话', '地址', '日期', '种类'][col-1])
+    wb.save(filename=excelFile)
 
 bot = Bot(cache_path=True)
-order = bot.groups().search(r'订单群')
+bot.messages.max_history = 10000
+# bot.messages.search('wxpy', sender=bot.self)
+
+order_group = bot.groups().search(r'订单群')
 province = ['北京', '天津', '上海', '重庆', '河北', '山西', '辽宁', '吉林', '黑龙江', '江苏', '浙江', '安徽',
             '福建', '江西', '山东', '河南', '湖北', '湖南', '广东', '海南', '四川', '贵州', '云南', '陕西',
             '甘肃', '青海', '台湾', '内蒙古', '广西壮族', '西藏', '宁夏回族', '新疆维吾尔', '香港', '澳门']
 products = [""]
 
 
-@bot.register(order, except_self=False)
+@bot.register(order_group, except_self=False)
 def reply_order(msg):
     cont = msg.text
     print(cont)
     if '数量' in cont:
         # 提示所有订单的数量
-        wb = openpyxl.load_workbook(filename="order_book.xlsx")
+        wb = openpyxl.load_workbook(filename=excelFile)
         ws = wb.active
         names = [i.value for i in tuple(ws.columns)[3] if i.value]
         print('订单共计{}条!'.format(len(names)-1))
         return '订单共计{}条!'.format(len(names)-1)
     if '订单' in cont:
         # 列出所有订单的内容
-        wb = openpyxl.load_workbook(filename="order_book.xlsx")
+        wb = openpyxl.load_workbook(filename=excelFile)
         ws = wb.active
         rows = tuple(ws.rows)[1:]
         # print(rows)
@@ -51,12 +62,14 @@ def reply_order(msg):
         print(content)
         return content
 
+    # 买方、卖方、联系人、电话、产品名称、规格型号、数量、单价、总价（是否包含运费）、交付方式
+    # 例如：小粉刷，150x3，冯颖，18201098888，山东德州德城区
+
     # 去除空格，中文逗号替换为英文逗号，再按逗号分离文本
     cont = cont.replace(' ', '')
     cont = cont.replace('，', ',')
     order_info = cont.split(",")
 
-    # 买方、卖方、联系人、电话、产品名称、规格型号、数量、单价、总价（是否包含运费）、交付方式
     if len(order_info) == 5:
         order_data = []
         # 以顿号分离产品和价格
@@ -70,6 +83,7 @@ def reply_order(msg):
             price = prices[i]
             price = price.replace('X', 'x')
             price = price.split("x")
+            # 如果价格和数量都为数字,说明输入正确
             if len(price) == 1 and price[0].isdigit():
                 price, number = int(price[0]), 1
             elif len(price) == 2 and price[0].isdigit() and price[1].isdigit():
@@ -92,30 +106,28 @@ def reply_order(msg):
                     return "错误：\n地址中没有包含省、直辖市、自治区、特别行政区的地址!"
                 date = msg.create_time.strftime('%H:%M:%S %Y-%m-%d')
 
-                # 种类 商品 价格 数量 买家 电话 地址  日期
+                # 商品 价格 数量 买家 电话 地址 日期 种类
                 order_data.append([prod, price, number, name, tel, addr, date, prod_num])
             else:
+                # 如果有多个商品，此项只写商品、数量、价格、其他为空
                 order_data.append([prod, price, number, "", "", "", "", ""])
         print(order_data)
+
         # 写入数据
-        wb = openpyxl.load_workbook(filename="order_book.xlsx")
+        wb = openpyxl.load_workbook(filename=excelFile)
         ws = wb.active
+        # 添加空行, 分割订单
+        ws.insert_rows(2)
         for i, prod in enumerate(order_data):
-            print(123)
-            print(i)
             ws.insert_rows(2+i)
-            print(prod)
+            # 商品 价格 数量 买家 电话 地址 日期 种类 1-8
             for clo in range(1, 9):
                 ws.cell(row=2+i, column=clo).value = prod[clo-1]
         # 文件打开时，保存失败！无报错!
-        wb.save('order_book.xlsx')
+        wb.save(excelFile)
 
-        wb = openpyxl.load_workbook(filename="order_book.xlsx")
-        ws = wb.active
         # 获取姓名列
-
         names = [i.value for i in tuple(ws.columns)[3] if i.value]
-        print(names)
         print("总共添加{}条订单!".format(len(names)-1))
         return "总共添加{}条订单!".format(len(names)-1)
 
