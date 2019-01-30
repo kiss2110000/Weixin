@@ -2,24 +2,29 @@ import os
 import openpyxl
 from wxpy import *
 
+
+def chickOrderExcel(filename):
+    if os.path.exists(filename) is False:
+        wb = openpyxl.Workbook()
+        ws = wb.active
+        for col in range(1, 9):
+            ws.cell(column=col, row=1, value=['商品', '价格', '数量', '客户', '电话', '地址', '日期', '种类'][col-1])
+        wb.save(filename=filename)
+
+
+# 获取文件名称，作为订单群的名称
 groupName = os.path.splitext(os.path.basename(os.path.abspath(__file__)))[0]
 excelFile = groupName+'.xlsx'
-if os.path.exists(excelFile) is False:
-    wb = openpyxl.Workbook()
-    ws = wb.active
-    for col in range(1,9):
-        ws.cell(column=col, row=1, value=['商品', '价格', '数量', '客户', '电话', '地址', '日期', '种类'][col-1])
-    wb.save(filename=excelFile)
 
+# 检查文件是否存在
+chickOrderExcel(excelFile)
+
+# 创建机器人
 bot = Bot(cache_path=True)
 bot.messages.max_history = 10000
 # bot.messages.search('wxpy', sender=bot.self)
-
-order_group = bot.groups().search(r'订单群')
-province = ['北京', '天津', '上海', '重庆', '河北', '山西', '辽宁', '吉林', '黑龙江', '江苏', '浙江', '安徽',
-            '福建', '江西', '山东', '河南', '湖北', '湖南', '广东', '海南', '四川', '贵州', '云南', '陕西',
-            '甘肃', '青海', '台湾', '内蒙古', '广西壮族', '西藏', '宁夏回族', '新疆维吾尔', '香港', '澳门']
-products = [""]
+order_group = bot.groups().search(r'订单群')[0]
+order_group.send("下单工具已上线!")
 
 
 @bot.register(order_group, except_self=False)
@@ -97,8 +102,11 @@ def reply_order(msg):
                 tel = order_info[3]
                 if len(tel) != 11 or tel.isdigit() is False:
                     return "错误：\n手机号码不是11位数或者不是纯数字号码！"
+                pro = ['北京', '天津', '上海', '重庆', '河北', '山西', '辽宁', '吉林', '黑龙江', '江苏', '浙江', '安徽',
+                       '福建', '江西', '山东', '河南', '湖北', '湖南', '广东', '海南', '四川', '贵州', '云南', '陕西',
+                       '甘肃', '青海', '台湾', '内蒙古', '广西壮族', '西藏', '宁夏回族', '新疆维吾尔', '香港', '澳门']
                 addr = None
-                for each in province:
+                for each in pro:
                     if each in order_info[4]:
                         addr = order_info[4]
                         break
@@ -111,7 +119,7 @@ def reply_order(msg):
             else:
                 # 如果有多个商品，此项只写商品、数量、价格、其他为空
                 order_data.append([prod, price, number, "", "", "", "", ""])
-        print(order_data)
+        # print(order_data)
 
         # 写入数据
         wb = openpyxl.load_workbook(filename=excelFile)
