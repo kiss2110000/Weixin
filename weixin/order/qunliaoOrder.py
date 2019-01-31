@@ -8,25 +8,37 @@ from wxpy import *
 # 客户 电话 地址 商品 价格 数量 项目数 日期 账号
 # client tel addr prod price num item date account
 
-field = ['客户', '电话', '地址', '商品', '价格', '数量', '项目数', '日期', '账号']
+fields = ['客户', '电话', '地址', '商品', '价格', '数量', '项目数', '日期', '账号']
+indexs = {i: fields.index(i)+1 for i in fields}
 
-client_index = field.index('客户')
-tel_index = field.index('电话')
-addr_index = field.index('地址')
-prod_index = field.index('商品')
-price_index = field.index('价格')
-num_index = field.index('数量')
-item_index = field.index('项目数')
-date_index = field.index('日期')
-account_index = field.index('账号')
+styles = {'客户': 'Note',
+          '电话': 'Note',
+          '地址': 'Note',
+          '商品': 'Note',
+          '价格': 'Note',
+          '数量': 'Note',
+          '项目数': 'Note',
+          '日期': 'Note',
+          '账号': 'Note',
+          }
+
+client_index = fields.index('客户')
+tel_index = fields.index('电话')
+addr_index = fields.index('地址')
+prod_index = fields.index('商品')
+price_index = fields.index('价格')
+num_index = fields.index('数量')
+item_index = fields.index('项目数')
+date_index = fields.index('日期')
+account_index = fields.index('账号')
 
 
 def chickOrderExcel(filename):
     if os.path.exists(filename) is False:
         wb = openpyxl.Workbook()
         ws = wb.active
-        for i in range(len(field)):
-            ws.cell(column=i+1, row=1, value=field[i])
+        for i in range(len(fields)):
+            ws.cell(column=i+1, row=1, value=fields[i])
             ws.cell(column=i + 1, row=1).style = 'Input'
         wb.save(filename=filename)
 
@@ -56,14 +68,14 @@ def insertOrder(order_data, filename):
     for i, prod in enumerate(order_data):
         ws.insert_rows(2+i)
         # 商品 价格 数量 买家 电话 地址 日期 种类 1-8
-        for clo in range(len(field)):
+        for clo in range(len(fields)):
             ws.cell(row=2+i, column=clo+1).value = prod[clo]
             ws.cell(row=2+i, column=clo+1).style = 'Note'
     # 文件打开时，保存失败！无报错!
     wb.save(filename)
 
 
-def deleteOrder(filename, value=None, field_name='客户', order_index=0):
+def deleteOrder(filename, value=None, fields_name='客户', order_index=0):
     # 列出所有订单的内容
     wb = openpyxl.load_workbook(filename=filename)
     ws = wb.active
@@ -80,17 +92,17 @@ def deleteOrder(filename, value=None, field_name='客户', order_index=0):
         wb.save(filename)
         return "删除1个订单!"
     # 获取输入字段的index
-    field_index = field.index(field_name)
+    fields_index = fields.index(fields_name)
     num = 0
-    # print('{}{}:{}'.format(field_index, field_name, value))
+    # print('{}{}:{}'.format(fields_index, fields_name, value))
     # 循环每行元组，如果项目数不为空,则表明是一个订单
     for i, row in enumerate(rows):
         item_value = row[item_index].value
         if item_value:
             # 检查查询字段的值名是否与输入值相同,获取指定的订单
-            field_value = row[field_index].value
-            # print(field_value)
-            if field_value == value:
+            fields_value = row[fields_index].value
+            # print(fields_value)
+            if fields_value == value:
                 if order_index == num:
                     # print("{}-{}".format(i+2, item_value+1))
                     ws.delete_rows(i+2, amount=item_value+1)
@@ -100,7 +112,7 @@ def deleteOrder(filename, value=None, field_name='客户', order_index=0):
     return "删除1个订单!"
 
 
-def findOrder(filename, value=None, field_name='客户'):
+def findOrder(filename, value=None, fields_name='客户'):
     # 列出所有订单的内容
     ws = openpyxl.load_workbook(filename=filename).active
     rows = tuple(ws.rows)[1:]  # 第一行为字段,不需要
@@ -113,18 +125,18 @@ def findOrder(filename, value=None, field_name='客户'):
         account = items[0][account_index].value
         return '末单:[{}] {}\n'.format(account, time) + info + '\n'
     # 获取输入字段的index
-    field_index = field.index(field_name)
+    fields_index = fields.index(fields_name)
     content = ":\n"
     num = 0
-    # print('{}{}:{}'.format(field_index, field_name, value))
+    # print('{}{}:{}'.format(fields_index, fields_name, value))
     # 循环每行元组，如果项目数不为空,则表明是一个订单
     for i, row in enumerate(rows):
         item_value = row[item_index].value
         if item_value:
             # 检查查询字段的值名是否与输入值相同,获取指定的订单
-            field_value = row[field_index].value
-            # print(field_value)
-            if field_value == value:
+            fields_value = row[fields_index].value
+            # print(fields_value)
+            if fields_value == value:
                 # 获取当前行和项目数范围内的行
                 items = rows[i:i+item_value]
                 info = contentOrder(items)
@@ -214,7 +226,7 @@ def main():
                 if finds[1] not in ['客户', '电话', '价格', '数量', '项目数', '账号']:
                     return '错误: 无效字段! \n例如：客户 电话 价格 数量 项目数 账号'
 
-                content = findOrder(excelFile, value=finds[2], field_name=finds[1])
+                content = findOrder(excelFile, value=finds[2], fields_name=finds[1])
                 print(content)
                 return content
         elif '删除' in cont:
@@ -236,7 +248,7 @@ def main():
             elif len(finds) == 3 and finds[1].isalpha():
                 if finds[1] not in ['客户', '电话', '价格', '数量', '项目数', '账号']:
                     return '错误: 无效字段! \n例如：客户 电话 价格 数量 项目数 账号'
-                content = deleteOrder(excelFile, value=finds[2], field_name=finds[1])
+                content = deleteOrder(excelFile, value=finds[2], fields_name=finds[1])
                 print(content)
                 return content
         elif '订单' in cont:
